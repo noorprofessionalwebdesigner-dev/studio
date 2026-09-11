@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Web Studio · Premium Web & Graphic Design in Karachi</title>
+    <meta name="description" content="Noor Hussain — Freelance Web & UI/UX Designer from Karachi. Custom websites, logos, branding, RTL/Urdu designs. WhatsApp: +92 311 0226230">
+    <meta name="keywords" content="web designer Karachi, logo designer Pakistan, freelance web designer, Urdu website designer, Noor Web Studio, UI UX designer">
+    <meta name="author" content="Noor Hussain">
+
+    <meta property="og:title" content="Noor Web Studio · Premium Web & Graphic Design">
+    <meta property="og:description" content="Premium Web & Graphic Design by Noor Hussain, Karachi. WhatsApp for quick booking.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6366f1;
+            --secondary: #ec4899;
+            --accent: #10b981;
+            --gold: #fbbf24;
+            --dark: #0a0a1a;
+            --light: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: rgba(99, 102, 241, 0.1);
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            --gradient-2: linear-gradient(135deg, #10b981 0%, #6366f1 100%);
+            --gradient-3: linear-gradient(135deg, #fbbf24 0%, #ec4899 100%);
+            --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(99, 102, 241, 0.18);
+            --shadow-xl: 0 30px 80px rgba(99, 102, 241, 0.25);
+        }
+        [data-theme="dark"] {
+            --primary: #818cf8;
+            --secondary: #f472b6;
+            --dark: #f8fafc;
+            --light: #0a0a1a;
+            --card: #131328;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: rgba(129, 140, 248, 0.15);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        body.urdu-mode { direction: rtl; }
+        body.urdu-mode h1, body.urdu-mode h2, body.urdu-mode h3,
+        body.urdu-mode h4, body.urdu-mode p, body.urdu-mode .btn,
+        body.urdu-mode label, body.urdu-mode input,
+        body.urdu-mode textarea, body.urdu-mode select,
+        body.urdu-mode .section-tag, body.urdu-mode .hero-badge,
+        body.urdu-mode .price-features li, body.urdu-mode .trust-text,
+        body.urdu-mode .fc-title, body.urdu-mode .fc-value,
+        body.urdu-mode .footer-about, body.urdu-mode .footer-links a,
+        body.urdu-mode .footer-bottom, body.urdu-mode .clients-label,
+        body.urdu-mode .ci-label {
+            font-family: 'Noto Nastaliq Urdu', 'Poppins', sans-serif;
+            line-height: 2.1;
+        }
+        body.urdu-mode .logo,
+        body.urdu-mode .stat-number,
+        body.urdu-mode .price-amount,
+        body.urdu-mode i {
+            font-family: 'Poppins', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', sans-serif !important;
+            line-height: 1;
+        }
+
+        /* ⭐ CRITICAL FIX: Icons & Numbers ko RTL mein LTR lock karo */
+        body.urdu-mode .contact-item,
+        body.urdu-mode .contact-item *,
+        body.urdu-mode .footer-links a {
+            direction: ltr;
+        }
+        body.urdu-mode .contact-item {
+            flex-direction: row;
+            text-align: left;
+        }
+        body.urdu-mode .contact-item > div:last-child {
+            flex: 1;
+            text-align: left;
+        }
+        body.urdu-mode .contact-item .ci-value,
+        body.urdu-mode .contact-item .ci-value span {
+            direction: ltr;
+            unicode-bidi: isolate;
+            text-align: left;
+        }
+        body.urdu-mode .ci-label {
+            text-align: left;
+        }
+
+        /* Icons ko kabhi text se overwrite na karo */
+        i[class*="fa-"] {
+            font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands', sans-serif !important;
+            font-style: normal !important;
+        }
+
+        /* Phone numbers LTR */
+        [dir="rtl"] .ci-value,
+        [dir="rtl"] .price-amount,
+        [dir="rtl"] .footer-links a {
+            unicode-bidi: isolate;
+        }
+
+        .logo { direction: ltr; unicode-bidi: isolate; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 4px;
+            background: var(--gradient-1); z-index: 9999;
+            width: 0%; transition: width 0.1s ease;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--gradient-1); color: white;
+            padding: 10px 20px; font-size: 0.85rem; font-weight: 500;
+            display: flex; justify-content: center; align-items: center;
+            gap: 15px; flex-wrap: wrap; position: relative; z-index: 102;
+        }
+        .top-bar .pulse-dot {
+            display: inline-block; width: 8px; height: 8px;
+            background: #10b981; border-radius: 50%;
+            margin-right: 6px; animation: pulseDot 1.5s infinite;
+        }
+        @keyframes pulseDot {
+            0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+            100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+        }
+        .top-bar .badge-pill {
+            background: rgba(255,255,255,0.22); padding: 4px 14px;
+            border-radius: 20px; font-size: 0.78rem;
+            white-space: nowrap; backdrop-filter: blur(10px);
+        }
+
+        /* Header */
+        header {
+            padding: 15px 0; position: sticky; top: 0;
+            background: rgba(248, 250, 252, 0.85);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            z-index: 100; border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] header { background: rgba(10, 10, 26, 0.85); }
+        header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); padding: 12px 0; }
+        .nav-wrapper {
+            display: flex; justify-content: space-between;
+            align-items: center; gap: 12px;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; font-weight: 800;
+            font-size: 1.25rem; color: var(--primary);
+            flex-shrink: 0;
+        }
+        .logo-img-slot {
+            width: 42px; height: 42px; border-radius: 10px;
+            background: var(--gradient-1);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+            flex-shrink: 0;
+        }
+        .logo-img-slot img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-text span { color: var(--secondary); }
+        @media (max-width: 480px) {
+            .logo { font-size: 1rem; }
+            .logo-img-slot { width: 36px; height: 36px; }
+        }
+        .main-nav { display: flex; gap: 24px; list-style: none; }
+        .main-nav a {
+            text-decoration: none; color: var(--muted);
+            font-weight: 500; font-size: 0.88rem;
+            position: relative; transition: color 0.3s ease;
+        }
+        .main-nav a:hover { color: var(--primary); }
+        .main-nav a::after {
+            content: ''; position: absolute; bottom: -6px; left: 0;
+            width: 0; height: 2px; background: var(--gradient-1);
+            transition: width 0.3s ease; border-radius: 2px;
+        }
+        .main-nav a:hover::after { width: 100%; }
+        @media (max-width: 900px) { .main-nav { display: none; } }
+
+        .nav-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+        .icon-btn {
+            width: 38px; height: 38px; border-radius: 10px;
+            background: rgba(99,102,241,0.08); border: 1px solid var(--border);
+            color: var(--primary); display: flex;
+            align-items: center; justify-content: center;
+            cursor: pointer; font-size: 0.95rem; transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .icon-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+        .icon-btn.lang-btn { width: auto; padding: 0 10px; font-weight: 700; font-size: 0.78rem; gap: 4px; }
+        .cta-nav-btn {
+            padding: 9px 16px; background: var(--gradient-1);
+            color: white; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
+            font-size: 0.82rem; transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+            display: flex; align-items: center; gap: 6px;
+            white-space: nowrap;
+        }
+        .cta-nav-btn:hover { transform: translateY(-3px); }
+        .menu-toggle {
+            display: none; width: 38px; height: 38px;
+            border-radius: 10px; background: rgba(99,102,241,0.08);
+            border: none; color: var(--primary);
+            font-size: 1.05rem; cursor: pointer;
+            flex-shrink: 0;
+        }
+        @media (max-width: 900px) {
+            .menu-toggle { display: flex; align-items: center; justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            .cta-nav-btn { padding: 8px 12px; font-size: 0.75rem; }
+            .cta-nav-btn span:not(.fa) { display: none; }
+        }
+        @media (max-width: 400px) {
+            .icon-btn.lang-btn { padding: 0 8px; font-size: 0.72rem; }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%;
+            width: 280px; height: 100vh; background: var(--card);
+            z-index: 1000; padding: 30px 25px;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+            transition: right 0.4s ease;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        body.urdu-mode .mobile-menu { right: auto; left: -100%; transition: left 0.4s ease; }
+        .mobile-menu.open { right: 0; }
+        body.urdu-mode .mobile-menu.open { left: 0; right: auto; }
+        .mobile-menu a {
+            padding: 14px 16px; text-decoration: none;
+            color: var(--text); border-radius: 12px;
+            font-weight: 500; transition: all 0.3s ease;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .mobile-menu a:hover { background: rgba(99,102,241,0.08); color: var(--primary); }
+        .mobile-menu .close-btn {
+            align-self: flex-end; background: none; border: none;
+            font-size: 1.3rem; color: var(--muted);
+            cursor: pointer; margin-bottom: 20px;
+        }
+        .menu-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .menu-overlay.show { opacity: 1; visibility: visible; }
+
+        /* Hero */
+        .hero {
+            padding: 60px 0 50px; position: relative;
+            overflow: hidden;
+        }
+        .hero-bg-shape {
+            position: absolute; border-radius: 50%;
+            filter: blur(80px); opacity: 0.3; z-index: 0;
+        }
+        .hero-bg-shape.s1 {
+            width: 400px; height: 400px; background: var(--primary);
+            top: -150px; right: -100px; animation: float 8s ease-in-out infinite;
+        }
+        .hero-bg-shape.s2 {
+            width: 350px; height: 350px; background: var(--secondary);
+            bottom: -120px; left: -100px; animation: float 10s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+        .hero-grid {
+            display: grid; grid-template-columns: 1.1fr 1fr;
+            gap: 50px; align-items: center;
+            position: relative; z-index: 1; width: 100%;
+        }
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 35px; text-align: center; }
+            .hero { padding: 40px 0; }
+        }
+        .hero-badges {
+            display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+        }
+        @media (max-width: 900px) { .hero-badges { justify-content: center; } }
+        .hero-badge {
+            background: rgba(99,102,241,0.08); color: var(--primary);
+            padding: 7px 14px; border-radius: 30px;
+            font-size: 0.75rem; font-weight: 600;
+            display: flex; align-items: center; gap: 6px;
+            border: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-size: 3rem; font-weight: 800;
+            line-height: 1.15; color: var(--dark);
+            margin-bottom: 18px; letter-spacing: -1px;
+        }
+        @media (max-width: 900px) { .hero h1 { font-size: 2.2rem; } }
+        @media (max-width: 480px) { .hero h1 { font-size: 1.75rem; line-height: 1.5; } }
+        .hero h1 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero h1 .wave { display: inline-block; animation: wave 2s infinite; }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-15deg); }
+        }
+        .hero p.lead {
+            font-size: 1.02rem; color: var(--muted);
+            margin-bottom: 28px; max-width: 540px;
+        }
+        @media (max-width: 900px) { .hero p.lead { margin: 0 auto 28px; } }
+        .hero-actions {
+            display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+        }
+        @media (max-width: 900px) { .hero-actions { justify-content: center; } }
+        .btn {
+            padding: 13px 28px; border-radius: 50px;
+            font-weight: 600; text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex; align-items: center;
+            gap: 8px; font-size: 0.92rem;
+            border: none; cursor: pointer; font-family: inherit;
+        }
+        .btn-primary {
+            background: var(--gradient-1); color: white;
+            box-shadow: 0 8px 25px rgba(99,102,241,0.35);
+        }
+        .btn-primary:hover { transform: translateY(-4px); }
+        .btn-glass {
+            background: rgba(255,255,255,0.6); backdrop-filter: blur(10px);
+            border: 1.5px solid var(--border); color: var(--primary);
+        }
+        [data-theme="dark"] .btn-glass { background: rgba(255,255,255,0.05); }
+        .btn-glass:hover { background: var(--primary); color: white; border-color: var(--primary); transform: translateY(-3px); }
+        .hero-trust {
+            display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+        }
+        @media (max-width: 900px) { .hero-trust { justify-content: center; } }
+        .avatar-stack { display: flex; }
+        .avatar-stack .av {
+            width: 38px; height: 38px; border-radius: 50%;
+            border: 3px solid var(--light); background: var(--gradient-1);
+            color: white; display: flex; align-items: center;
+            justify-content: center; font-weight: 700;
+            font-size: 0.85rem; margin-left: -10px;
+        }
+        [data-theme="dark"] .avatar-stack .av { border-color: var(--card); }
+        .avatar-stack .av:first-child { margin-left: 0; }
+        .avatar-stack .av:nth-child(2) { background: var(--gradient-2); }
+        .avatar-stack .av:nth-child(3) { background: var(--gradient-3); }
+        .avatar-stack .av:nth-child(4) { background: linear-gradient(135deg, #06b6d4, #6366f1); }
+        .trust-text { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+        .trust-text strong { color: var(--text); display: block; }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .hero-image-wrapper {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1;
+            border-radius: 28px;
+            background: var(--gradient-1);
+            padding: 8px;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+            animation: floatY 6s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        @keyframes floatY {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 22px;
+            display: block;
+        }
+        .float-card {
+            position: absolute; background: var(--card);
+            padding: 10px 14px; border-radius: 14px;
+            box-shadow: var(--shadow-md);
+            display: flex; align-items: center; gap: 8px;
+            z-index: 2; border: 1px solid var(--border);
+        }
+        .float-card i { font-size: 1.1rem; }
+        .float-card .fc-title { font-size: 0.68rem; color: var(--muted); }
+        .float-card .fc-value { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+        .float-card.c1 { top: 6%; left: -10px; animation: floatY 5s ease-in-out infinite; }
+        .float-card.c2 { bottom: 8%; right: -10px; animation: floatY 7s ease-in-out infinite reverse; }
+        @media (max-width: 900px) {
+            .float-card.c1 { left: 5px; }
+            .float-card.c2 { right: 5px; }
+        }
+        @media (max-width: 480px) {
+            .hero-image-wrapper { max-width: 300px; }
+            .float-card { padding: 7px 10px; }
+            .float-card i { font-size: 0.9rem; }
+            .float-card .fc-title { font-size: 0.6rem; }
+            .float-card .fc-value { font-size: 0.75rem; }
+        }
+        .float-card.c1 i { color: var(--gold); }
+        .float-card.c2 i { color: var(--accent); }
+
+        /* Sections */
+        section { padding: 70px 0; }
+        .section-head { text-align: center; margin-bottom: 50px; }
+        .section-tag {
+            display: inline-block; padding: 6px 16px;
+            background: rgba(99,102,241,0.08);
+            color: var(--primary); border-radius: 30px;
+            font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .section-head h2 {
+            font-size: 2.2rem; font-weight: 800;
+            color: var(--dark); margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        @media (max-width: 480px) { .section-head h2 { font-size: 1.6rem; } }
+        .section-head h2 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-head p {
+            color: var(--muted); font-size: 0.95rem;
+            max-width: 600px; margin: 0 auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+        .service-card {
+            background: var(--card); padding: 28px 24px;
+            border-radius: 20px; border: 1px solid var(--border);
+            transition: all 0.4s ease; position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover {
+            transform: translateY(-6px); box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            background: var(--gradient-1); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.35rem; margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(99,102,241,0.25);
+        }
+        .service-card:nth-child(2) .service-icon { background: var(--gradient-2); }
+        .service-card:nth-child(3) .service-icon { background: var(--gradient-3); }
+        .service-card:nth-child(4) .service-icon { background: linear-gradient(135deg, #06b6d4, #6366f1); }
+        .service-card:nth-child(5) .service-icon { background: linear-gradient(135deg, #f43f5e, #ec4899); }
+        .service-card:nth-child(6) .service-icon { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+        .service-card h3 {
+            font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 8px; color: var(--dark);
+        }
+        .service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+
+        /* About */
+        .about-section {
+            background: rgba(99,102,241,0.03);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1.3fr;
+            gap: 50px; align-items: center;
+        }
+        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 35px; } }
+        .about-image {
+            aspect-ratio: 1; border-radius: 22px;
+            background: var(--gradient-1); padding: 8px;
+            box-shadow: var(--shadow-xl); max-width: 380px;
+            margin: 0 auto; width: 100%;
+        }
+        .about-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 16px; display: block;
+        }
+        .about-content h2 {
+            font-size: 2rem; font-weight: 800;
+            color: var(--dark); margin-bottom: 16px;
+        }
+        @media (max-width: 480px) { .about-content h2 { font-size: 1.5rem; } }
+        .about-content h2 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .about-content p {
+            color: var(--muted); font-size: 0.95rem;
+            margin-bottom: 14px; line-height: 1.8;
+        }
+        .about-features {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 12px; margin-top: 22px;
+        }
+        @media (max-width: 480px) { .about-features { grid-template-columns: 1fr; } }
+        .about-features div {
+            display: flex; align-items: center;
+            gap: 10px; font-size: 0.88rem;
+            color: var(--text); font-weight: 500;
+        }
+        .about-features i { color: var(--accent); flex-shrink: 0; }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            border-radius: 18px; overflow: hidden;
+            position: relative; aspect-ratio: 4/3;
+            background: var(--card); border: 1px solid var(--border);
+            cursor: pointer; transition: all 0.4s ease;
+        }
+        .portfolio-item img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center;
+            display: block; transition: transform 0.5s ease;
+        }
+        .portfolio-item:hover img { transform: scale(1.08); }
+        .portfolio-item:hover { box-shadow: var(--shadow-lg); }
+        .portfolio-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,10,26,0.9), transparent 60%);
+            display: flex; align-items: flex-end;
+            padding: 20px; opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay h4 { color: white; font-size: 1rem; font-weight: 700; }
+        .portfolio-overlay p { color: rgba(255,255,255,0.75); font-size: 0.78rem; }
+
+        /* Stats */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px; text-align: center;
+        }
+        .stat-item {
+            padding: 22px 12px; border-radius: 16px;
+            background: var(--card); border: 1px solid var(--border);
+        }
+        .stat-number {
+            font-size: 2rem; font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 4px;
+        }
+        .stat-label { color: var(--muted); font-size: 0.8rem; font-weight: 500; }
+
+        /* Pricing */
+        .pricing-section {
+            background: rgba(99,102,241,0.03);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px; max-width: 1050px; margin: 0 auto;
+        }
+        .price-card {
+            background: var(--card); border-radius: 20px;
+            padding: 32px 24px; border: 1.5px solid var(--border);
+            position: relative; transition: all 0.4s ease;
+        }
+        .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+        .price-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(236,72,153,0.05));
+        }
+        @media (min-width: 901px) { .price-card.featured { transform: scale(1.03); } }
+        .price-badge {
+            position: absolute; top: -12px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-1); color: white;
+            padding: 5px 16px; border-radius: 30px;
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            white-space: nowrap;
+        }
+        body.urdu-mode .price-badge { transform: translateX(50%); }
+        .price-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+        .price-card .price-desc { color: var(--muted); font-size: 0.82rem; margin-bottom: 16px; }
+        .price-amount {
+            font-size: 2.1rem; font-weight: 800;
+            color: var(--primary); margin-bottom: 4px;
+            letter-spacing: -1px;
+        }
+        .price-amount small { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+        .price-features { list-style: none; margin: 20px 0; }
+        .price-features li {
+            padding: 7px 0; font-size: 0.85rem;
+            color: var(--text); display: flex;
+            align-items: center; gap: 10px;
+        }
+        .price-features li i { color: var(--accent); font-size: 0.8rem; }
+        .price-features li.disabled { color: var(--muted); opacity: 0.5; }
+        .price-features li.disabled i { color: var(--muted); }
+        .price-card .btn { width: 100%; justify-content: center; padding: 12px 18px; font-size: 0.88rem; }
+
+        /* Contact */
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1.1fr; gap: 45px;
+        }
+        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 35px; } }
+        .contact-info h2 {
+            font-size: 1.8rem; font-weight: 800;
+            color: var(--dark); margin-bottom: 12px;
+        }
+        @media (max-width: 480px) { .contact-info h2 { font-size: 1.4rem; } }
+        .contact-info h2 .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .contact-info p {
+            color: var(--muted); font-size: 0.92rem;
+            margin-bottom: 22px; line-height: 1.8;
+        }
+        .contact-item {
+            display: flex; align-items: center; gap: 14px;
+            padding: 14px 16px; background: var(--card);
+            border-radius: 14px; margin-bottom: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease; text-decoration: none;
+            color: var(--text);
+        }
+        .contact-item:hover {
+            transform: translateX(5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+        body.urdu-mode .contact-item:hover { transform: translateX(0) scale(1.02); }
+        .contact-item-icon {
+            width: 42px; height: 42px; border-radius: 12px;
+            background: var(--gradient-1); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+        }
+        .contact-item:nth-child(2) .contact-item-icon { background: linear-gradient(135deg, #25D366, #10b981); }
+        .contact-item:nth-child(3) .contact-item-icon { background: linear-gradient(135deg, #ef4444, #ec4899); }
+        .contact-item:nth-child(4) .contact-item-icon { background: linear-gradient(135deg, #0a66c2, #6366f1); }
+        .contact-item:nth-child(5) .contact-item-icon { background: linear-gradient(135deg, #f59e0b, #ec4899); }
+        .contact-item .ci-label {
+            font-size: 0.7rem; color: var(--muted);
+            font-weight: 600; letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .contact-item .ci-value {
+            font-size: 0.88rem; font-weight: 600;
+            color: var(--text); word-break: break-all;
+        }
+        .contact-form {
+            background: var(--card); border-radius: 20px;
+            padding: 28px 24px; border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form h3 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 18px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label {
+            display: block; font-size: 0.8rem;
+            font-weight: 600; color: var(--text);
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 11px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 12px; background: var(--light);
+            color: var(--text); font-size: 0.88rem;
+            font-family: inherit; transition: all 0.3s ease;
+        }
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea,
+        [data-theme="dark"] .form-group select {
+            background: rgba(255,255,255,0.03);
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none; border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+        }
+        .form-group textarea { resize: vertical; min-height: 90px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+        .contact-form .btn { width: 100%; justify-content: center; margin-top: 6px; }
+
+        /* Footer */
+        footer {
+            background: #0a0a1a; color: #cbd5e1;
+            padding: 50px 0 22px;
+        }
+        [data-theme="dark"] footer { background: #05050f; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 35px; margin-bottom: 35px;
+        }
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
+        @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+        .footer-brand {
+            display: flex; align-items: center;
+            gap: 10px; margin-bottom: 14px;
+            font-weight: 800; font-size: 1.15rem;
+            color: white; direction: ltr;
+        }
+        .footer-brand .logo-img-slot { width: 38px; height: 38px; }
+        .footer-about { font-size: 0.82rem; color: #94a3b8; line-height: 1.7; margin-bottom: 16px; }
+        .footer-socials { display: flex; gap: 8px; }
+        .footer-socials a {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            color: #cbd5e1; display: flex;
+            align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.3s ease;
+        }
+        .footer-socials a:hover { background: var(--gradient-1); color: white; transform: translateY(-3px); }
+        .footer-col h4 { color: white; font-size: 0.92rem; font-weight: 700; margin-bottom: 14px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 9px; }
+        .footer-links a {
+            color: #94a3b8; text-decoration: none;
+            font-size: 0.82rem; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px; text-align: center;
+            font-size: 0.78rem; color: #94a3b8;
+        }
+        .footer-bottom .heart { color: var(--secondary); }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, #25D366, #10b981);
+            color: white; display: flex;
+            align-items: center; justify-content: center;
+            font-size: 1.5rem; text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37,211,102,0.45);
+            z-index: 998; animation: waPulse 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        body.urdu-mode .whatsapp-float { right: auto; left: 20px; }
+        @keyframes waPulse {
+            0% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.6); }
+            70% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 18px rgba(37,211,102,0); }
+            100% { box-shadow: 0 10px 30px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0); }
+        }
+        @media (max-width: 480px) {
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.3rem; bottom: 16px; right: 16px; }
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span><span class="pulse-dot"></span> <span data-en="Available for New Projects" data-ur="نئے پروجیکٹس کے لیے دستیاب">Available for New Projects</span></span>
+        <span class="badge-pill" data-en="⚡ 24 Hour Delivery" data-ur="⚡ 24 گھنٹے ڈیلیوری">⚡ 24 Hour Delivery</span>
+        <span class="badge-pill" data-en="📍 Karachi, PK" data-ur="📍 کراچی، پاکستان">📍 Karachi, PK</span>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">
+                    <div class="logo-img-slot">
+                        <img src="1.png" alt="Noor Web Studio">
+                    </div>
+                    <span class="logo-text">Noor <span>Studio</span></span>
+                </a>
+
+                <ul class="main-nav">
+                    <li><a href="#services" data-en="Services" data-ur="خدمات">Services</a></li>
+                    <li><a href="#about" data-en="About" data-ur="تعارف">About</a></li>
+                    <li><a href="#portfolio" data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</a></li>
+                    <li><a href="#pricing" data-en="Pricing" data-ur="قیمتیں">Pricing</a></li>
+                    <li><a href="#contact" data-en="Contact" data-ur="رابطہ">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn lang-btn" id="langToggle" aria-label="Toggle language">
+                        <i class="fas fa-globe"></i> <span id="langLabel">UR</span>
+                    </button>
+                    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20website%20banwani%20hai" 
+                       target="_blank" class="cta-nav-btn">
+                        <i class="fab fa-whatsapp"></i> <span data-en="Hire Me" data-ur="ہائر کریں">Hire Me</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" id="closeMenu"><i class="fas fa-times"></i></button>
+        <a href="#services"><i class="fas fa-cog"></i> <span data-en="Services" data-ur="خدمات">Services</span></a>
+        <a href="#about"><i class="fas fa-user"></i> <span data-en="About" data-ur="تعارف">About</span></a>
+        <a href="#portfolio"><i class="fas fa-briefcase"></i> <span data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</span></a>
+        <a href="#pricing"><i class="fas fa-tags"></i> <span data-en="Pricing" data-ur="قیمتیں">Pricing</span></a>
+        <a href="#contact"><i class="fas fa-envelope"></i> <span data-en="Contact" data-ur="رابطہ">Contact</span></a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg-shape s1"></div>
+        <div class="hero-bg-shape s2"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badges">
+                        <span class="hero-badge"><i class="fas fa-star"></i> <span data-en="5.0 Rating" data-ur="5.0 ریٹنگ">5.0 Rating</span></span>
+                        <span class="hero-badge"><i class="fas fa-bolt"></i> <span data-en="Fast Delivery" data-ur="تیز ڈیلیوری">Fast Delivery</span></span>
+                        <span class="hero-badge"><i class="fas fa-shield-alt"></i> <span data-en="Verified on ZinnHub" data-ur="ZinnHub پر تصدیق شدہ">Verified on ZinnHub</span></span>
+                    </div>
+
+                    <h1>
+                        <span data-en="Premium Web &" data-ur="پیشہ ورانہ ویب اور">Premium Web &</span><br>
+                        <span class="gradient-text" data-en="Graphic Design" data-ur="گرافک ڈیزائن">Graphic Design</span> <span class="wave">👋</span>
+                    </h1>
+
+                    <p class="lead">
+                        <span data-en="Assalam o Alaikum! I'm Noor Hussain, a self-taught Web, UI/UX & Graphic Designer from Karachi, Pakistan. I build modern, mobile-first, RTL-ready websites that look perfect everywhere." 
+                              data-ur="السلام علیکم! میں نور حسین ہوں، کراچی پاکستان سے ایک خود سیکھا ہوا ویب، UI/UX اور گرافک ڈیزائنر۔ میں جدید، موبائل فرینڈلی اور RTL تیار ویب سائٹس بناتا ہوں۔">
+                              Assalam o Alaikum! I'm Noor Hussain, a self-taught Web, UI/UX & Graphic Designer from Karachi, Pakistan. I build modern, mobile-first, RTL-ready websites that look perfect everywhere.
+                        </span>
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20website%20banwani%20hai" 
+                           target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> <span data-en="Order on WhatsApp" data-ur="واٹس ایپ پر آرڈر کریں">Order on WhatsApp</span>
+                        </a>
+                        <a href="#portfolio" class="btn btn-glass">
+                            <i class="fas fa-eye"></i> <span data-en="View Portfolio" data-ur="پورٹ فولیو دیکھیں">View Portfolio</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="avatar-stack">
+                            <div class="av">A</div>
+                            <div class="av">B</div>
+                            <div class="av">C</div>
+                            <div class="av">+</div>
+                        </div>
+                        <div class="trust-text">
+                            <strong data-en="Happy Clients Worldwide" data-ur="دنیا بھر میں خوش گاہک">Happy Clients Worldwide</strong>
+                            <span data-en="Urdu & English bilingual support" data-ur="اردو اور انگریزی دو لسانی معاونت">Urdu & English bilingual support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <img src="1.jpg" alt="Noor Hussain">
+                    </div>
+                    <div class="float-card c1">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <div class="fc-title" data-en="Rating" data-ur="ریٹنگ">Rating</div>
+                            <div class="fc-value">5.0 ★</div>
+                        </div>
+                    </div>
+                    <div class="float-card c2">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <div class="fc-title" data-en="Delivery" data-ur="ڈیلیوری">Delivery</div>
+                            <div class="fc-value" data-en="On Time" data-ur="وقت پر">On Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag" data-en="What I Offer" data-ur="میں کیا پیش کرتا ہوں">What I Offer</span>
+                <h2><span data-en="My" data-ur="میری">My</span> <span class="gradient-text" data-en="Services" data-ur="خدمات">Services</span></h2>
+                <p data-en="Complete design solutions for your business — from websites to branding, all in one place." 
+                   data-ur="آپ کے کاروبار کے لیے مکمل ڈیزائن حل — ویب سائٹس سے لے کر برانڈنگ تک، سب ایک جگہ۔">
+                   Complete design solutions for your business — from websites to branding, all in one place.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-en="Website Design" data-ur="ویب سائٹ ڈیزائن">Website Design</h3>
+                    <p data-en="Modern, mobile-first & fully responsive websites using HTML5, CSS3, Flexbox & Grid." 
+                       data-ur="جدید، موبائل فرینڈلی اور مکمل ریسپانسیو ویب سائٹس HTML5، CSS3، Flexbox اور Grid سے۔">
+                       Modern, mobile-first & fully responsive websites using HTML5, CSS3, Flexbox & Grid.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3 data-en="UI/UX Design" data-ur="UI/UX ڈیزائن">UI/UX Design</h3>
+                    <p data-en="Clean, user-friendly interfaces in Figma — wireframes, prototypes & design systems." 
+                       data-ur="Figma میں صاف، صارف دوست انٹرفیس — وائر فریمز، پروٹوٹائپس اور ڈیزائن سسٹمز۔">
+                       Clean, user-friendly interfaces in Figma — wireframes, prototypes & design systems.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3 data-en="Logo & Branding" data-ur="لوگو اور برانڈنگ">Logo & Branding</h3>
+                    <p data-en="Custom logos, brand kits, color palettes & visual identity that make you stand out." 
+                       data-ur="کسٹم لوگو، برانڈ کٹس، رنگ پیلیٹ اور بصری شناخت جو آپ کو نمایاں کرے۔">
+                       Custom logos, brand kits, color palettes & visual identity that make you stand out.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-language"></i></div>
+                    <h3 data-en="Urdu / RTL Design" data-ur="اردو / RTL ڈیزائن">Urdu / RTL Design</h3>
+                    <p data-en="Bilingual Urdu-English designs with proper RTL support — perfect for local audiences." 
+                       data-ur="اردو-انگریزی دو لسانی ڈیزائن مناسب RTL کے ساتھ — مقامی سامعین کے لیے بہترین۔">
+                       Bilingual Urdu-English designs with proper RTL support — perfect for local audiences.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
+                    <h3 data-en="Website Fix & Update" data-ur="ویب سائٹ ٹھیک اور اپڈیٹ">Website Fix & Update</h3>
+                    <p data-en="Fix broken layouts, update old sites, improve speed & make everything mobile-friendly." 
+                       data-ur="ٹوٹے لے آؤٹ ٹھیک کریں، پرانی سائٹس اپڈیٹ کریں، رفتار بہتر بنائیں اور سب کچھ موبائل فرینڈلی کریں۔">
+                       Fix broken layouts, update old sites, improve speed & make everything mobile-friendly.
+                    </p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h3 data-en="SEO-Friendly Code" data-ur="SEO فرینڈلی کوڈ">SEO-Friendly Code</h3>
+                    <p data-en="Clean, tidy, fast-loading code with proper SEO structure right from the start." 
+                       data-ur="صاف، منظم، تیز لوڈ ہونے والا کوڈ مناسب SEO ڈھانچے کے ساتھ شروع سے۔">
+                       Clean, tidy, fast-loading code with proper SEO structure right from the start.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="1.jpg" alt="Noor Hussain">
+                </div>
+                <div class="about-content reveal">
+                    <span class="section-tag" data-en="About Me" data-ur="میرے بارے میں">About Me</span>
+                    <h2>
+                        <span data-en="Assalam o Alaikum, I'm " data-ur="السلام علیکم، میں ہوں ">Assalam o Alaikum, I'm </span>
+                        <span class="gradient-text" data-en="Noor Hussain" data-ur="نور حسین">Noor Hussain</span>
+                    </h2>
+                    <p data-en="I'm a dedicated and self-taught Web, UI/UX & Graphic Designer from Karachi, Pakistan — ready to turn your ideas into clean, beautiful, fully-working websites and designs." 
+                       data-ur="میں کراچی، پاکستان سے ایک محنتی اور خود سیکھا ہوا ویب، UI/UX اور گرافک ڈیزائنر ہوں — آپ کے خیالات کو صاف، خوبصورت، مکمل کام کرنے والی ویب سائٹس اور ڈیزائنوں میں بدلنے کے لیے تیار۔">
+                       I'm a dedicated and self-taught Web, UI/UX & Graphic Designer from Karachi, Pakistan — ready to turn your ideas into clean, beautiful, fully-working websites and designs.
+                    </p>
+                    <p data-en="I build modern, mobile-first & fully-responsive layouts using HTML5, CSS3, Flexbox, Grid & Figma. I also create logos, branding kits, landing pages, fix/update old sites, and keep code simple, tidy, fast-loading & SEO-friendly." 
+                       data-ur="میں HTML5، CSS3، Flexbox، Grid اور Figma استعمال کرتے ہوئے جدید، موبائل فرینڈلی اور مکمل ریسپانسیو لے آؤٹ بناتا ہوں۔ میں لوگو، برانڈنگ کٹس، لینڈنگ پیجز بھی بناتا ہوں، پرانی سائٹس ٹھیک/اپڈیٹ کرتا ہوں، اور کوڈ سادہ، منظم، تیز اور SEO فرینڈلی رکھتا ہوں۔">
+                       I build modern, mobile-first & fully-responsive layouts using HTML5, CSS3, Flexbox, Grid & Figma. I also create logos, branding kits, landing pages, fix/update old sites, and keep code simple, tidy, fast-loading & SEO-friendly.
+                    </p>
+                    <p data-en="Even though I'm new to formal platforms, I learn fast, work honestly, reply quickly, and deliver exactly what was discussed — with revisions included until you're fully happy." 
+                       data-ur="اگرچہ میں رسمی پلیٹ فارمز پر نیا ہوں، لیکن میں تیزی سے سیکھتا ہوں، ایمانداری سے کام کرتا ہوں، جلدی جواب دیتا ہوں، اور بالکل وہی فراہم کرتا ہوں جو بات ہوئی تھی — ریویژنز کے ساتھ جب تک آپ مکمل طور پر خوش نہ ہوں۔">
+                       Even though I'm new to formal platforms, I learn fast, work honestly, reply quickly, and deliver exactly what was discussed — with revisions included until you're fully happy.
+                    </p>
+
+                    <div class="about-features">
+                        <div><i class="fas fa-check-circle"></i> <span data-en="Verified on ZinnHub" data-ur="ZinnHub پر تصدیق شدہ">Verified on ZinnHub</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span data-en="Karachi Based" data-ur="کراچی میں مقیم">Karachi Based</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span data-en="Urdu & English" data-ur="اردو اور انگریزی">Urdu & English</span></div>
+                        <div><i class="fas fa-check-circle"></i> <span data-en="Worldwide Remote" data-ur="دنیا بھر میں ریموٹ">Worldwide Remote</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag" data-en="Recent Work" data-ur="حالیہ کام">Recent Work</span>
+                <h2><span data-en="My" data-ur="میرا">My</span> <span class="gradient-text" data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</span></h2>
+                <p data-en="A glimpse of some recent designs and projects I've worked on." 
+                   data-ur="میرے کچھ حالیہ ڈیزائنز اور پروجیکٹس کی ایک جھلک۔">
+                   A glimpse of some recent designs and projects I've worked on.
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item reveal">
+                    <img src="2.jpg" alt="Portfolio 1">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h4 data-en="Web Designer Karachi" data-ur="ویب ڈیزائنر کراچی">Web Designer Karachi</h4>
+                            <p data-en="Personal Branding" data-ur="ذاتی برانڈنگ">Personal Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="3.jpg" alt="Portfolio 2">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h4 data-en="UI/UX Project" data-ur="UI/UX پروجیکٹ">UI/UX Project</h4>
+                            <p data-en="App Interface Design" data-ur="ایپ انٹرفیس ڈیزائن">App Interface Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="4.jpg" alt="Portfolio 3">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h4 data-en="Noor Web Studio" data-ur="نور ویب اسٹوڈیو">Noor Web Studio</h4>
+                            <p data-en="Brand Identity" data-ur="برانڈ شناخت">Brand Identity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item reveal">
+                    <img src="5.jpg" alt="Portfolio 4">
+                    <div class="portfolio-overlay">
+                        <div>
+                            <h4 data-en="Creative Design" data-ur="تخلیقی ڈیزائن">Creative Design</h4>
+                            <p data-en="Graphic Design" data-ur="گرافک ڈیزائن">Graphic Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section style="padding: 40px 0;">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label" data-en="Client Satisfaction" data-ur="گاہک کی اطمینان">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label" data-en="Fast Response" data-ur="تیز جواب">Fast Response</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label" data-en="Languages (UR/EN)" data-ur="زبانیں (اردو/انگریزی)">Languages (UR/EN)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label" data-en="Revisions Until Happy" data-ur="خوش ہونے تک ریویژنز">Revisions Until Happy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag" data-en="Pricing" data-ur="قیمتیں">Pricing</span>
+                <h2><span data-en="Simple &" data-ur="سادہ اور">Simple &</span> <span class="gradient-text" data-en="Affordable" data-ur="سستی">Affordable</span></h2>
+                <p data-en="Fair and clear prices — nothing hidden or extra charged later." 
+                   data-ur="منصفانہ اور واضح قیمتیں — کچھ چھپا ہوا یا بعد میں اضافی چارج نہیں۔">
+                   Fair and clear prices — nothing hidden or extra charged later.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card reveal">
+                    <h3 data-en="Starter" data-ur="اسٹارٹر">Starter</h3>
+                    <p class="price-desc" data-en="Perfect for personal use" data-ur="ذاتی استعمال کے لیے بہترین">Perfect for personal use</p>
+                    <div class="price-amount"><small>PKR</small> 5,000</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> <span data-en="1 Page Website" data-ur="1 صفحہ ویب سائٹ">1 Page Website</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Mobile Responsive" data-ur="موبائل ریسپانسیو">Mobile Responsive</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Basic SEO Setup" data-ur="بنیادی SEO سیٹ اپ">Basic SEO Setup</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="2 Revisions" data-ur="2 ریویژنز">2 Revisions</span></li>
+                        <li class="disabled"><i class="fas fa-times"></i> <span data-en="Custom Logo" data-ur="کسٹم لوگو">Custom Logo</span></li>
+                        <li class="disabled"><i class="fas fa-times"></i> <span data-en="RTL/Urdu Support" data-ur="RTL/اردو سپورٹ">RTL/Urdu Support</span></li>
+                    </ul>
+                    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20Starter%20package%20chahiye" 
+                       target="_blank" class="btn btn-glass">
+                        <i class="fab fa-whatsapp"></i> <span data-en="Order Now" data-ur="ابھی آرڈر کریں">Order Now</span>
+                    </a>
+                </div>
+
+                <div class="price-card featured reveal">
+                    <span class="price-badge" data-en="Most Popular" data-ur="سب سے مقبول">Most Popular</span>
+                    <h3 data-en="Professional" data-ur="پروفیشنل">Professional</h3>
+                    <p class="price-desc" data-en="Best for businesses" data-ur="کاروبار کے لیے بہترین">Best for businesses</p>
+                    <div class="price-amount"><small>PKR</small> 15,000</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> <span data-en="Up to 5 Pages" data-ur="5 صفحات تک">Up to 5 Pages</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Mobile Responsive" data-ur="موبائل ریسپانسیو">Mobile Responsive</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Full SEO Setup" data-ur="مکمل SEO سیٹ اپ">Full SEO Setup</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Custom Logo" data-ur="کسٹم لوگو">Custom Logo</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="RTL/Urdu Support" data-ur="RTL/اردو سپورٹ">RTL/Urdu Support</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="5 Revisions" data-ur="5 ریویژنز">5 Revisions</span></li>
+                    </ul>
+                    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20Professional%20package%20chahiye" 
+                       target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> <span data-en="Order Now" data-ur="ابھی آرڈر کریں">Order Now</span>
+                    </a>
+                </div>
+
+                <div class="price-card reveal">
+                    <h3 data-en="Business" data-ur="بزنس">Business</h3>
+                    <p class="price-desc" data-en="Complete branding solution" data-ur="مکمل برانڈنگ حل">Complete branding solution</p>
+                    <div class="price-amount"><small>PKR</small> 30,000</div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> <span data-en="Unlimited Pages" data-ur="لامحدود صفحات">Unlimited Pages</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Full Branding Kit" data-ur="مکمل برانڈنگ کٹ">Full Branding Kit</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Advanced SEO" data-ur="ایڈوانس SEO">Advanced SEO</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Logo + Social Kit" data-ur="لوگو + سوشل کٹ">Logo + Social Kit</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Bilingual (UR/EN)" data-ur="دو لسانی (اردو/انگریزی)">Bilingual (UR/EN)</span></li>
+                        <li><i class="fas fa-check"></i> <span data-en="Unlimited Revisions" data-ur="لامحدود ریویژنز">Unlimited Revisions</span></li>
+                    </ul>
+                    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20Business%20package%20chahiye" 
+                       target="_blank" class="btn btn-glass">
+                        <i class="fab fa-whatsapp"></i> <span data-en="Order Now" data-ur="ابھی آرڈر کریں">Order Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag" data-en="Get In Touch" data-ur="رابطہ کریں">Get In Touch</span>
+                <h2><span data-en="Let's Build Something " data-ur="چلیں کچھ بنائیں ">Let's Build Something </span><span class="gradient-text" data-en="Great" data-ur="شاندار">Great</span></h2>
+                <p data-en="Ready to start your project? Reach out and I'll reply as soon as possible." 
+                   data-ur="اپنا پروجیکٹ شروع کرنے کے لیے تیار ہیں؟ رابطہ کریں اور میں جلد از جلد جواب دوں گا۔">
+                   Ready to start your project? Reach out and I'll reply as soon as possible.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2><span data-en="Contact " data-ur="رابطہ ">Contact </span><span class="gradient-text" data-en="Information" data-ur="معلومات">Information</span></h2>
+                    <p data-en="Feel free to reach out through any of these channels — I usually reply within a few hours." 
+                       data-ur="ان میں سے کسی بھی ذریعے سے رابطہ کریں — میں عام طور پر چند گھنٹوں میں جواب دیتا ہوں۔">
+                       Feel free to reach out through any of these channels — I usually reply within a few hours.
+                    </p>
+
+                    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum" target="_blank" class="contact-item">
+                        <div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <div class="ci-label">WhatsApp</div>
+                            <div class="ci-value"><span dir="ltr">+92 311 0226230</span></div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:noor226230@gmail.com" class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="ci-label">Email</div>
+                            <div class="ci-value"><span dir="ltr">noor226230@gmail.com</span></div>
+                        </div>
+                    </a>
+
+                    <a href="https://zinnhub.com/store/noor-web-studio/" target="_blank" class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-store"></i></div>
+                        <div>
+                            <div class="ci-label">ZinnHub Store</div>
+                            <div class="ci-value"><span dir="ltr">Noor Web Studio</span></div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/noor-hussain-0b9309432" target="_blank" class="contact-item">
+                        <div class="contact-item-icon"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <div class="ci-label">LinkedIn</div>
+                            <div class="ci-value"><span dir="ltr">Noor Hussain</span></div>
+                        </div>
+                    </a>
+
+                    <a href="https://noorprofessionalwebdesigner-dev.github.io/noor-h/" target="_blank" class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <div class="ci-label" data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</div>
+                            <div class="ci-value"><span data-en="View Live Work" data-ur="لائیو کام دیکھیں">View Live Work</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <h3 data-en="Send a Message" data-ur="پیغام بھیجیں">Send a Message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-en="Your Name" data-ur="آپ کا نام">Your Name</label>
+                            <input type="text" id="name" required placeholder="Enter your name" data-en-ph="Enter your name" data-ur-ph="اپنا نام لکھیں">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone / WhatsApp" data-ur="فون / واٹس ایپ">Phone / WhatsApp</label>
+                            <input type="tel" id="phone" required placeholder="03XX XXXXXXX">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service" data-en="Service Needed" data-ur="مطلوبہ خدمت">Service Needed</label>
+                        <select id="service" required>
+                            <option value="" data-en="Select a service..." data-ur="خدمت منتخب کریں...">Select a service...</option>
+                            <option data-en="Website Design" data-ur="ویب سائٹ ڈیزائن">Website Design</option>
+                            <option data-en="UI/UX Design" data-ur="UI/UX ڈیزائن">UI/UX Design</option>
+                            <option data-en="Logo & Branding" data-ur="لوگو اور برانڈنگ">Logo & Branding</option>
+                            <option data-en="Urdu / RTL Design" data-ur="اردو / RTL ڈیزائن">Urdu / RTL Design</option>
+                            <option data-en="Website Fix / Update" data-ur="ویب سائٹ ٹھیک / اپڈیٹ">Website Fix / Update</option>
+                            <option data-en="Other" data-ur="دیگر">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-en="Your Message" data-ur="آپ کا پیغام">Your Message</label>
+                        <textarea id="message" required placeholder="Tell me about your project..." data-en-ph="Tell me about your project..." data-ur-ph="اپنے پروجیکٹ کے بارے میں بتائیں..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> <span data-en="Send via WhatsApp" data-ur="واٹس ایپ پر بھیجیں">Send via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="logo-img-slot">
+                            <img src="1.png" alt="Noor Web Studio">
+                        </div>
+                        Noor Web Studio
+                    </div>
+                    <p class="footer-about" data-en="Premium Web & Graphic Design by Noor Hussain. Verified on ZinnHub, based in Karachi, serving clients worldwide." 
+                       data-ur="نور حسین کی طرف سے پیشہ ورانہ ویب اور گرافک ڈیزائن۔ ZinnHub پر تصدیق شدہ، کراچی میں مقیم، دنیا بھر کے گاہکوں کی خدمت۔">
+                       Premium Web & Graphic Design by Noor Hussain. Verified on ZinnHub, based in Karachi, serving clients worldwide.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://wa.me/923110226230" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/noor-hussain-0b9309432" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:noor226230@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://zinnhub.com/store/noor-web-studio/" target="_blank" aria-label="ZinnHub"><i class="fas fa-store"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-en="Quick Links" data-ur="فوری لنکس">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-en="Services" data-ur="خدمات">Services</a></li>
+                        <li><a href="#about" data-en="About" data-ur="تعارف">About</a></li>
+                        <li><a href="#portfolio" data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</a></li>
+                        <li><a href="#pricing" data-en="Pricing" data-ur="قیمتیں">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-en="Services" data-ur="خدمات">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services" data-en="Website Design" data-ur="ویب سائٹ ڈیزائن">Website Design</a></li>
+                        <li><a href="#services" data-en="UI/UX Design" data-ur="UI/UX ڈیزائن">UI/UX Design</a></li>
+                        <li><a href="#services" data-en="Logo & Branding" data-ur="لوگو اور برانڈنگ">Logo & Branding</a></li>
+                        <li><a href="#services" data-en="Urdu / RTL" data-ur="اردو / RTL">Urdu / RTL</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-en="Contact" data-ur="رابطہ">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/923110226230" target="_blank"><i class="fab fa-whatsapp"></i> <span dir="ltr">+92 311 0226230</span></a></li>
+                        <li><a href="mailto:noor226230@gmail.com"><i class="fas fa-envelope"></i> <span data-en="Email Me" data-ur="ای میل کریں">Email Me</span></a></li>
+                        <li><a href="https://zinnhub.com/store/noor-web-studio/" target="_blank"><i class="fas fa-store"></i> ZinnHub</a></li>
+                        <li><a href="https://noorprofessionalwebdesigner-dev.github.io/noor-h/" target="_blank"><i class="fas fa-globe"></i> <span data-en="Portfolio" data-ur="پورٹ فولیو">Portfolio</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span data-en="© 2026 Noor Web Studio · Made with ❤ in Karachi, Pakistan" 
+                      data-ur="© 2026 نور ویب اسٹوڈیو · کراچی، پاکستان میں ❤ کے ساتھ بنایا گیا">
+                    © 2026 Noor Web Studio · Made with <span class="heart">❤</span> in Karachi, Pakistan
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923110226230?text=Assalam%20o%20Alaikum%2C%20mujhe%20website%20banwani%20hai" 
+       target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // ==================== SCROLL PROGRESS ====================
+        const scrollProgress = document.getElementById('scrollProgress');
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width = ((scrollTop / docHeight) * 100) + '%';
+            if (scrollTop > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        // ==================== THEME TOGGLE ====================
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // ==================== LANGUAGE TOGGLE (FIXED) ====================
+        const langToggle = document.getElementById('langToggle');
+        const langLabel = document.getElementById('langLabel');
+        let isUrdu = false;
+
+        function setLanguage(urdu) {
+            isUrdu = urdu;
+            document.body.classList.toggle('urdu-mode', urdu);
+            document.documentElement.setAttribute('dir', urdu ? 'rtl' : 'ltr');
+            document.documentElement.setAttribute('lang', urdu ? 'ur' : 'en');
+            langLabel.textContent = urdu ? 'EN' : 'UR';
+
+            // ⭐ SIRF SPAN tags translate karo (icons ko chhodo)
+            document.querySelectorAll('span[data-en][data-ur]').forEach(el => {
+                if (!el.querySelector('i')) {
+                    el.textContent = urdu ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+                }
+            });
+
+            // ⭐ SIRF H4, P, H3, H2, LI jo data-en rakhte hain unhe translate karo
+            document.querySelectorAll('h2[data-en][data-ur], h3[data-en][data-ur], h4[data-en][data-ur], p[data-en][data-ur], li[data-en][data-ur], div[data-en][data-ur]:not(.ci-value)').forEach(el => {
+                if (!el.querySelector('i') && !el.querySelector('span')) {
+                    el.textContent = urdu ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+                }
+            });
+
+            // ⭐ OPTION tags translate karo
+            document.querySelectorAll('option[data-en][data-ur]').forEach(el => {
+                el.textContent = urdu ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+            });
+
+            // ⭐ Placeholders translate karo
+            document.querySelectorAll('[data-en-ph][data-ur-ph]').forEach(el => {
+                el.placeholder = urdu ? el.getAttribute('data-ur-ph') : el.getAttribute('data-en-ph');
+            });
+
+            // ⭐ ICONS ko lock karo — Font Awesome family
+            document.querySelectorAll('i[class*="fa-"]').forEach(icon => {
+                icon.style.fontFamily = "'Font Awesome 6 Free', 'Font Awesome 6 Brands'";
+            });
+
+            localStorage.setItem('lang', urdu ? 'ur' : 'en');
+        }
+
+        langToggle.addEventListener('click', () => setLanguage(!isUrdu));
+
+        // Load saved language
+        if (localStorage.getItem('lang') === 'ur') {
+            setLanguage(true);
+        }
+
+        // ==================== MOBILE MENU ====================
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+        const openMenuFn = () => {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeMenuFn = () => {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('show');
+            document.body.style.overflow = '';
+        };
+        menuToggle.addEventListener('click', openMenuFn);
+        closeMenu.addEventListener('click', closeMenuFn);
+        menuOverlay.addEventListener('click', closeMenuFn);
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenuFn));
+
+        // ==================== CONTACT FORM → WHATSAPP ====================
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            const text = `Assalam o Alaikum Noor bhai!%0A%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0A%0AMessage: ${message}`;
+            window.open(`https://wa.me/923110226230?text=${text}`, '_blank');
+        });
+
+        // ==================== SCROLL REVEAL ====================
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
